@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedra Papel Tesoura</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎮 Pedra, Papel ou Tesoura</h1>
+
+        <form method="POST">
+
+            <button name="jogada" value="pedra">🪨 Pedra</button>
+
+            <button name="jogada" value="papel">📄 Papel</button>
+
+            <button name="jogada" value="tesoura">✂️ Tesoura</button>
+
+        </form>
+
+        <div class="resultado">
+            <h2>{{ mensagem }}</h2>
+
+            {% if computador %}
+                <p>Você escolheu: {{ jogador }}</p>
+                <p>Computador escolheu: {{ computador }}</p>
+            {% endif %}
+        </div>
+
+        <div class="placar">
+            🧑 Jogador: {{ resultado_jogador }}
+            <br>
+            🤖 Computador: {{ resultado_maquina }}
+        </div>
+
+    </div>
+
+</body>
+</html>
